@@ -38,9 +38,9 @@ class CustomModules():
   def createFile(self, title : str, mimeType : str, parentId : str=current_folderId):
     
     try:
-      #if(os.path.exists('{location}/{module}'.format(location=current_location, module=title))):
-      with open('{location}/{module}'.format(location=current_location, module=title), 'r') as f:
-        print('I am here at {location}/{module}'.format(location=current_location, module=title))
+      if(os.path.exists('{location}/{module}'.format(location=current_location, module=title))):
+      #with open('{location}/{module}'.format(location=current_location, module=title), 'r') as f:
+        print('I am here55 at {location}/{module}'.format(location=current_location, module=title))
     except:
       module = self._drive.CreateFile({'title': title, 'mimeType':mimeType, 'parents':[{"kind": "drive#fileLink","id": parentId}] })
       print(module)
