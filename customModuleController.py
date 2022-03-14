@@ -38,7 +38,7 @@ class CustomModules():
     
   # Authenticate and create the PyDrive client.
   # This only needs to be done once per notebook.
-  def createFile(self, title : str, mimeType : str, content : str, parentId : str=current_folderId):
+  def createFile(self, title : str, mimeType : str, content : str="", parentId : str=current_folderId):
     if os.path.exists('{location}/{module}'.format(location=current_location, module=title)):
       print('I am already here at {location}/{module}'.format(location=current_location, module=title))
     else:
